@@ -1,8 +1,22 @@
-const express = require('express')
+import * as express from 'express'
+
 const app = express()
 
-app.get('/', function (req, res) {
-  res.send('Hello World, vem que o pai ta on 23')
+app.get('/', (req, res) => {
+  res.send('GET/')
 })
 
-app.listen(3000, function(){console.log('online, acesse o servidor: https://localhost:3000')})
+app.put('/', (req, res) => {
+  res.send('PUT/')
+})
+
+app.post('/', (req, res) => {
+  res.send('POST/')
+})
+
+app.delete('/', (req, res) => {
+  res.send('DELETE/')
+})
+
+
+app.listen(3000, function(){console.log('online, acesse o servidor: http://localhost:3000')})

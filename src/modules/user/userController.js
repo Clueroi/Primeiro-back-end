@@ -1,5 +1,7 @@
 import {Router} from 'express'
 
+import { signup } from './userService'
+
 const router = Router()
 
 router.post('/signup', (req, res) => {

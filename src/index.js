@@ -1,22 +1,13 @@
 import * as express from 'express'
 
+import userController from './controller/userController'
+import postController from './controller/postController'
+
 const app = express()
 
-app.get('/', (req, res) => {
-  res.send('GET/')
-})
+app.use('/user', userController)
+app.use('/post', postController)
 
-app.put('/', (req, res) => {
-  res.send('PUT/')
-})
-
-app.post('/', (req, res) => {
-  res.send('POST/')
-})
-
-app.delete('/', (req, res) => {
-  res.send('DELETE/')
-})
 
 
 app.listen(3000, function(){console.log('online, acesse o servidor: http://localhost:3000')})
